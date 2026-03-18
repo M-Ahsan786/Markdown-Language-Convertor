@@ -340,68 +340,135 @@
 
 <script>
 // ═══════════════════════════════════════
+// FLAG IMAGE HELPER
+// Uses flagcdn.com — works on ALL OS including Windows
+// cc = ISO 3166-1 alpha-2 country code (lowercase)
+// ═══════════════════════════════════════
+function flagImg(cc, size = 20) {
+    if (!cc) return `<span style="width:${size}px;height:${size}px;display:inline-flex;align-items:center;justify-content:center;background:rgba(108,99,255,0.15);border-radius:3px;font-size:10px;color:#a09aff;flex-shrink:0;">🌐</span>`;
+    return `<img src="https://flagcdn.com/w40/${cc}.png" width="${size}" height="${Math.round(size*0.75)}" alt="" style="border-radius:3px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`;
+}
+
+// ═══════════════════════════════════════
 // LANGUAGE DATA
+// code = translation lang code, cc = ISO country code for flag
 // ═══════════════════════════════════════
 const TOP_LANGS = [
-    {code:'ur',name:'Urdu',flag:'🇵🇰'},{code:'ar',name:'Arabic',flag:'🇸🇦'},
-    {code:'zh-CN',name:'Chinese',flag:'🇨🇳'},{code:'fr',name:'French',flag:'🇫🇷'},
-    {code:'es',name:'Spanish',flag:'🇪🇸'},{code:'de',name:'German',flag:'🇩🇪'},
-    {code:'tr',name:'Turkish',flag:'🇹🇷'},{code:'hi',name:'Hindi',flag:'🇮🇳'},
-    {code:'ru',name:'Russian',flag:'🇷🇺'},{code:'ja',name:'Japanese',flag:'🇯🇵'},
+    {code:'ur',  name:'Urdu',    cc:'pk'},
+    {code:'ar',  name:'Arabic',  cc:'sa'},
+    {code:'zh-CN',name:'Chinese',cc:'cn'},
+    {code:'fr',  name:'French',  cc:'fr'},
+    {code:'es',  name:'Spanish', cc:'es'},
+    {code:'de',  name:'German',  cc:'de'},
+    {code:'tr',  name:'Turkish', cc:'tr'},
+    {code:'hi',  name:'Hindi',   cc:'in'},
+    {code:'ru',  name:'Russian', cc:'ru'},
+    {code:'ja',  name:'Japanese',cc:'jp'},
 ];
 const ALL_LANGS = [
-    {code:'af',name:'Afrikaans',flag:'🇿🇦'},{code:'sq',name:'Albanian',flag:'🇦🇱'},
-    {code:'am',name:'Amharic',flag:'🇪🇹'},{code:'ar',name:'Arabic',flag:'🇸🇦'},
-    {code:'hy',name:'Armenian',flag:'🇦🇲'},{code:'az',name:'Azerbaijani',flag:'🇦🇿'},
-    {code:'eu',name:'Basque',flag:'🏴'},{code:'be',name:'Belarusian',flag:'🇧🇾'},
-    {code:'bn',name:'Bengali',flag:'🇧🇩'},{code:'bs',name:'Bosnian',flag:'🇧🇦'},
-    {code:'bg',name:'Bulgarian',flag:'🇧🇬'},{code:'ca',name:'Catalan',flag:'🏴'},
-    {code:'ceb',name:'Cebuano',flag:'🇵🇭'},{code:'zh-CN',name:'Chinese (Simplified)',flag:'🇨🇳'},
-    {code:'zh-TW',name:'Chinese (Traditional)',flag:'🇹🇼'},{code:'co',name:'Corsican',flag:'🇫🇷'},
-    {code:'hr',name:'Croatian',flag:'🇭🇷'},{code:'cs',name:'Czech',flag:'🇨🇿'},
-    {code:'da',name:'Danish',flag:'🇩🇰'},{code:'nl',name:'Dutch',flag:'🇳🇱'},
-    {code:'eo',name:'Esperanto',flag:'🌍'},{code:'et',name:'Estonian',flag:'🇪🇪'},
-    {code:'fi',name:'Finnish',flag:'🇫🇮'},{code:'fr',name:'French',flag:'🇫🇷'},
-    {code:'fy',name:'Frisian',flag:'🇳🇱'},{code:'gl',name:'Galician',flag:'🇪🇸'},
-    {code:'ka',name:'Georgian',flag:'🇬🇪'},{code:'de',name:'German',flag:'🇩🇪'},
-    {code:'el',name:'Greek',flag:'🇬🇷'},{code:'gu',name:'Gujarati',flag:'🇮🇳'},
-    {code:'ht',name:'Haitian Creole',flag:'🇭🇹'},{code:'ha',name:'Hausa',flag:'🇳🇬'},
-    {code:'haw',name:'Hawaiian',flag:'🇺🇸'},{code:'iw',name:'Hebrew',flag:'🇮🇱'},
-    {code:'hi',name:'Hindi',flag:'🇮🇳'},{code:'hmn',name:'Hmong',flag:'🌏'},
-    {code:'hu',name:'Hungarian',flag:'🇭🇺'},{code:'is',name:'Icelandic',flag:'🇮🇸'},
-    {code:'ig',name:'Igbo',flag:'🇳🇬'},{code:'id',name:'Indonesian',flag:'🇮🇩'},
-    {code:'ga',name:'Irish',flag:'🇮🇪'},{code:'it',name:'Italian',flag:'🇮🇹'},
-    {code:'ja',name:'Japanese',flag:'🇯🇵'},{code:'jw',name:'Javanese',flag:'🇮🇩'},
-    {code:'kn',name:'Kannada',flag:'🇮🇳'},{code:'kk',name:'Kazakh',flag:'🇰🇿'},
-    {code:'km',name:'Khmer',flag:'🇰🇭'},{code:'ko',name:'Korean',flag:'🇰🇷'},
-    {code:'ku',name:'Kurdish',flag:'🌍'},{code:'ky',name:'Kyrgyz',flag:'🇰🇬'},
-    {code:'lo',name:'Lao',flag:'🇱🇦'},{code:'la',name:'Latin',flag:'🌍'},
-    {code:'lv',name:'Latvian',flag:'🇱🇻'},{code:'lt',name:'Lithuanian',flag:'🇱🇹'},
-    {code:'lb',name:'Luxembourgish',flag:'🇱🇺'},{code:'mk',name:'Macedonian',flag:'🇲🇰'},
-    {code:'mg',name:'Malagasy',flag:'🇲🇬'},{code:'ms',name:'Malay',flag:'🇲🇾'},
-    {code:'ml',name:'Malayalam',flag:'🇮🇳'},{code:'mt',name:'Maltese',flag:'🇲🇹'},
-    {code:'mi',name:'Maori',flag:'🇳🇿'},{code:'mr',name:'Marathi',flag:'🇮🇳'},
-    {code:'mn',name:'Mongolian',flag:'🇲🇳'},{code:'my',name:'Myanmar (Burmese)',flag:'🇲🇲'},
-    {code:'ne',name:'Nepali',flag:'🇳🇵'},{code:'no',name:'Norwegian',flag:'🇳🇴'},
-    {code:'ny',name:'Nyanja (Chichewa)',flag:'🇲🇼'},{code:'ps',name:'Pashto',flag:'🇦🇫'},
-    {code:'fa',name:'Persian',flag:'🇮🇷'},{code:'pl',name:'Polish',flag:'🇵🇱'},
-    {code:'pt',name:'Portuguese',flag:'🇵🇹'},{code:'pa',name:'Punjabi',flag:'🇵🇰'},
-    {code:'ro',name:'Romanian',flag:'🇷🇴'},{code:'ru',name:'Russian',flag:'🇷🇺'},
-    {code:'sm',name:'Samoan',flag:'🇼🇸'},{code:'gd',name:'Scots Gaelic',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
-    {code:'sr',name:'Serbian',flag:'🇷🇸'},{code:'st',name:'Sesotho',flag:'🇱🇸'},
-    {code:'sn',name:'Shona',flag:'🇿🇼'},{code:'sd',name:'Sindhi',flag:'🇵🇰'},
-    {code:'si',name:'Sinhala',flag:'🇱🇰'},{code:'sk',name:'Slovak',flag:'🇸🇰'},
-    {code:'sl',name:'Slovenian',flag:'🇸🇮'},{code:'so',name:'Somali',flag:'🇸🇴'},
-    {code:'es',name:'Spanish',flag:'🇪🇸'},{code:'su',name:'Sundanese',flag:'🇮🇩'},
-    {code:'sw',name:'Swahili',flag:'🇰🇪'},{code:'sv',name:'Swedish',flag:'🇸🇪'},
-    {code:'tl',name:'Tagalog (Filipino)',flag:'🇵🇭'},{code:'tg',name:'Tajik',flag:'🇹🇯'},
-    {code:'ta',name:'Tamil',flag:'🇮🇳'},{code:'te',name:'Telugu',flag:'🇮🇳'},
-    {code:'th',name:'Thai',flag:'🇹🇭'},{code:'tr',name:'Turkish',flag:'🇹🇷'},
-    {code:'uk',name:'Ukrainian',flag:'🇺🇦'},{code:'ur',name:'Urdu',flag:'🇵🇰'},
-    {code:'uz',name:'Uzbek',flag:'🇺🇿'},{code:'vi',name:'Vietnamese',flag:'🇻🇳'},
-    {code:'cy',name:'Welsh',flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿'},{code:'xh',name:'Xhosa',flag:'🇿🇦'},
-    {code:'yi',name:'Yiddish',flag:'🌍'},{code:'yo',name:'Yoruba',flag:'🇳🇬'},
-    {code:'zu',name:'Zulu',flag:'🇿🇦'},
+    {code:'af', name:'Afrikaans',          cc:'za'},
+    {code:'sq', name:'Albanian',           cc:'al'},
+    {code:'am', name:'Amharic',            cc:'et'},
+    {code:'ar', name:'Arabic',             cc:'sa'},
+    {code:'hy', name:'Armenian',           cc:'am'},
+    {code:'az', name:'Azerbaijani',        cc:'az'},
+    {code:'eu', name:'Basque',             cc:'es'},
+    {code:'be', name:'Belarusian',         cc:'by'},
+    {code:'bn', name:'Bengali',            cc:'bd'},
+    {code:'bs', name:'Bosnian',            cc:'ba'},
+    {code:'bg', name:'Bulgarian',          cc:'bg'},
+    {code:'ca', name:'Catalan',            cc:'es'},
+    {code:'ceb',name:'Cebuano',            cc:'ph'},
+    {code:'zh-CN',name:'Chinese (Simplified)',  cc:'cn'},
+    {code:'zh-TW',name:'Chinese (Traditional)', cc:'tw'},
+    {code:'co', name:'Corsican',           cc:'fr'},
+    {code:'hr', name:'Croatian',           cc:'hr'},
+    {code:'cs', name:'Czech',              cc:'cz'},
+    {code:'da', name:'Danish',             cc:'dk'},
+    {code:'nl', name:'Dutch',              cc:'nl'},
+    {code:'eo', name:'Esperanto',          cc:null},
+    {code:'et', name:'Estonian',           cc:'ee'},
+    {code:'fi', name:'Finnish',            cc:'fi'},
+    {code:'fr', name:'French',             cc:'fr'},
+    {code:'fy', name:'Frisian',            cc:'nl'},
+    {code:'gl', name:'Galician',           cc:'es'},
+    {code:'ka', name:'Georgian',           cc:'ge'},
+    {code:'de', name:'German',             cc:'de'},
+    {code:'el', name:'Greek',              cc:'gr'},
+    {code:'gu', name:'Gujarati',           cc:'in'},
+    {code:'ht', name:'Haitian Creole',     cc:'ht'},
+    {code:'ha', name:'Hausa',              cc:'ng'},
+    {code:'haw',name:'Hawaiian',           cc:'us'},
+    {code:'iw', name:'Hebrew',             cc:'il'},
+    {code:'hi', name:'Hindi',              cc:'in'},
+    {code:'hmn',name:'Hmong',              cc:null},
+    {code:'hu', name:'Hungarian',          cc:'hu'},
+    {code:'is', name:'Icelandic',          cc:'is'},
+    {code:'ig', name:'Igbo',               cc:'ng'},
+    {code:'id', name:'Indonesian',         cc:'id'},
+    {code:'ga', name:'Irish',              cc:'ie'},
+    {code:'it', name:'Italian',            cc:'it'},
+    {code:'ja', name:'Japanese',           cc:'jp'},
+    {code:'jw', name:'Javanese',           cc:'id'},
+    {code:'kn', name:'Kannada',            cc:'in'},
+    {code:'kk', name:'Kazakh',             cc:'kz'},
+    {code:'km', name:'Khmer',              cc:'kh'},
+    {code:'ko', name:'Korean',             cc:'kr'},
+    {code:'ku', name:'Kurdish',            cc:'iq'},
+    {code:'ky', name:'Kyrgyz',             cc:'kg'},
+    {code:'lo', name:'Lao',               cc:'la'},
+    {code:'la', name:'Latin',              cc:null},
+    {code:'lv', name:'Latvian',            cc:'lv'},
+    {code:'lt', name:'Lithuanian',         cc:'lt'},
+    {code:'lb', name:'Luxembourgish',      cc:'lu'},
+    {code:'mk', name:'Macedonian',         cc:'mk'},
+    {code:'mg', name:'Malagasy',           cc:'mg'},
+    {code:'ms', name:'Malay',              cc:'my'},
+    {code:'ml', name:'Malayalam',          cc:'in'},
+    {code:'mt', name:'Maltese',            cc:'mt'},
+    {code:'mi', name:'Maori',              cc:'nz'},
+    {code:'mr', name:'Marathi',            cc:'in'},
+    {code:'mn', name:'Mongolian',          cc:'mn'},
+    {code:'my', name:'Myanmar (Burmese)',  cc:'mm'},
+    {code:'ne', name:'Nepali',             cc:'np'},
+    {code:'no', name:'Norwegian',          cc:'no'},
+    {code:'ny', name:'Nyanja (Chichewa)',  cc:'mw'},
+    {code:'ps', name:'Pashto',             cc:'af'},
+    {code:'fa', name:'Persian',            cc:'ir'},
+    {code:'pl', name:'Polish',             cc:'pl'},
+    {code:'pt', name:'Portuguese',         cc:'pt'},
+    {code:'pa', name:'Punjabi',            cc:'pk'},
+    {code:'ro', name:'Romanian',           cc:'ro'},
+    {code:'ru', name:'Russian',            cc:'ru'},
+    {code:'sm', name:'Samoan',             cc:'ws'},
+    {code:'gd', name:'Scots Gaelic',       cc:'gb'},
+    {code:'sr', name:'Serbian',            cc:'rs'},
+    {code:'st', name:'Sesotho',            cc:'ls'},
+    {code:'sn', name:'Shona',              cc:'zw'},
+    {code:'sd', name:'Sindhi',             cc:'pk'},
+    {code:'si', name:'Sinhala',            cc:'lk'},
+    {code:'sk', name:'Slovak',             cc:'sk'},
+    {code:'sl', name:'Slovenian',          cc:'si'},
+    {code:'so', name:'Somali',             cc:'so'},
+    {code:'es', name:'Spanish',            cc:'es'},
+    {code:'su', name:'Sundanese',          cc:'id'},
+    {code:'sw', name:'Swahili',            cc:'ke'},
+    {code:'sv', name:'Swedish',            cc:'se'},
+    {code:'tl', name:'Tagalog (Filipino)', cc:'ph'},
+    {code:'tg', name:'Tajik',              cc:'tj'},
+    {code:'ta', name:'Tamil',              cc:'in'},
+    {code:'te', name:'Telugu',             cc:'in'},
+    {code:'th', name:'Thai',               cc:'th'},
+    {code:'tr', name:'Turkish',            cc:'tr'},
+    {code:'uk', name:'Ukrainian',          cc:'ua'},
+    {code:'ur', name:'Urdu',               cc:'pk'},
+    {code:'uz', name:'Uzbek',              cc:'uz'},
+    {code:'vi', name:'Vietnamese',         cc:'vn'},
+    {code:'cy', name:'Welsh',              cc:'gb'},
+    {code:'xh', name:'Xhosa',             cc:'za'},
+    {code:'yi', name:'Yiddish',            cc:'il'},
+    {code:'yo', name:'Yoruba',             cc:'ng'},
+    {code:'zu', name:'Zulu',               cc:'za'},
 ];
 
 // ═══════════════════════════════════════
@@ -467,28 +534,28 @@ function removeFile(idx) {
 // ═══════════════════════════════════════
 function renderMainLangs() {
     document.getElementById('mainLangGrid').innerHTML = TOP_LANGS.map(l =>
-        `<button class="lang-btn" id="mlang-${l.code}" onclick="selectLang('${l.code}','${l.name}','${l.flag}')">
-            <span>${l.flag}</span>${l.name}</button>`
+        `<button class="lang-btn" id="mlang-${l.code}" onclick="selectLang('${l.code}','${l.name}','${l.cc}')">
+            ${flagImg(l.cc, 22)}<span>${l.name}</span></button>`
     ).join('');
 }
 function renderAllLangs(list) {
     document.getElementById('allLangGrid').innerHTML = list.map(l =>
         `<button class="modal-lang-btn ${selectedLang?.code === l.code ? 'selected' : ''}" id="alang-${l.code}"
-            onclick="selectLang('${l.code}','${l.name}','${l.flag}',true)">
-            <span style="font-size:16px;">${l.flag}</span><span>${l.name}</span></button>`
+            onclick="selectLang('${l.code}','${l.name}','${l.cc}',true)">
+            ${flagImg(l.cc, 22)}<span>${l.name}</span></button>`
     ).join('');
 }
 function filterLanguages(q) {
     renderAllLangs(q.trim() ? ALL_LANGS.filter(l => l.name.toLowerCase().includes(q.toLowerCase())) : ALL_LANGS);
 }
-function selectLang(code, name, flag, fromModal = false) {
-    selectedLang = { code, name, flag };
+function selectLang(code, name, cc, fromModal = false) {
+    selectedLang = { code, name, cc };
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('selected'));
     document.querySelectorAll('.modal-lang-btn').forEach(b => b.classList.remove('selected'));
     document.getElementById(`mlang-${code}`)?.classList.add('selected');
     document.getElementById(`alang-${code}`)?.classList.add('selected');
     document.getElementById('selectedBadge').style.display = 'block';
-    document.getElementById('selectedBadgeText').innerHTML = `${flag} &nbsp; Translating to: <strong>${name}</strong>`;
+    document.getElementById('selectedBadgeText').innerHTML = `${flagImg(cc,18)} &nbsp; Translating to: <strong>${name}</strong>`;
     checkReady();
     if (fromModal) setTimeout(closeModal, 280);
 }
@@ -546,7 +613,7 @@ async function startTranslation() {
     function updateOverall() {
         const pct = Math.round((completedCount / total) * 100);
         document.getElementById('overallBar').style.width  = pct + '%';
-        document.getElementById('overallLabel').textContent = `Translating to ${selectedLang.flag} ${selectedLang.name}...`;
+        document.getElementById('overallLabel').textContent = `Translating to ${selectedLang.name}...`;
         document.getElementById('overallCount').textContent = `${completedCount} / ${total} done`;
         document.getElementById('activeCount').textContent  = `${activeCount} active`;
     }
@@ -658,7 +725,7 @@ async function startTranslation() {
 
 function showResult() {
     const ok = translatedFiles.filter(f => f).length;
-    document.getElementById('resultTitle').textContent   = `Translation Complete! ${selectedLang.flag}`;
+    document.getElementById('resultTitle').textContent   = `Translation Complete! → ${selectedLang.name}`;
     document.getElementById('resultSubtitle').textContent = `${ok} file${ok!==1?'s':''} translated to ${selectedLang.name} — ready to download`;
     document.getElementById('resultFileList').innerHTML  = translatedFiles.map((f, i) =>
         f ? `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:9px;border:1px solid rgba(108,99,255,0.12);background:rgba(108,99,255,0.04);margin-bottom:6px;gap:8px;">
