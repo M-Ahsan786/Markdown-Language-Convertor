@@ -30,16 +30,12 @@
         .orb-2{width:350px;height:350px;background:rgba(255,101,132,0.08);bottom:-80px;right:-80px;animation-duration:22s;animation-delay:-8s;}
         .orb-3{width:300px;height:300px;background:rgba(67,217,173,0.07);top:40%;left:60%;animation-duration:26s;animation-delay:-12s;}
         @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
-
         .main-wrap{position:relative;z-index:1;padding:16px;min-height:100vh;display:flex;flex-direction:column;}
-
         .glass{background:linear-gradient(145deg,rgba(22,22,50,0.92) 0%,rgba(14,14,35,0.95) 100%);
             backdrop-filter:blur(28px);border:1px solid rgba(108,99,255,0.22);border-radius:24px;
-            box-shadow:0 0 0 1px rgba(255,255,255,0.03) inset,0 32px 80px rgba(0,0,0,0.5),0 0 60px rgba(108,99,255,0.06);
-            position:relative;}
+            box-shadow:0 0 0 1px rgba(255,255,255,0.03) inset,0 32px 80px rgba(0,0,0,0.5),0 0 60px rgba(108,99,255,0.06);position:relative;}
         .glass::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
             background:linear-gradient(90deg,transparent,rgba(108,99,255,0.6),rgba(67,217,173,0.4),transparent);border-radius:50%;}
-
         .upload-zone{border:1.5px dashed rgba(108,99,255,0.25);border-radius:18px;
             background:linear-gradient(145deg,rgba(108,99,255,0.04) 0%,rgba(14,14,35,0.6) 100%);
             transition:all 0.35s ease;cursor:pointer;
@@ -49,7 +45,6 @@
             transform:translateY(-3px);box-shadow:0 12px 40px rgba(108,99,255,0.18);}
         .upload-zone.loaded{border-color:rgba(67,217,173,0.5);border-style:solid;
             background:linear-gradient(145deg,rgba(67,217,173,0.07) 0%,rgba(14,14,35,0.7) 100%);}
-
         .btn-primary{background:linear-gradient(135deg,#6C63FF 0%,#9B8FFF 50%,#7C73FF 100%);
             background-size:200% auto;color:white;border:none;border-radius:12px;
             padding:12px 32px;font-weight:600;font-size:15px;cursor:pointer;transition:all 0.3s ease;
@@ -61,14 +56,12 @@
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(108,99,255,0.52);}
         .btn-primary:disabled{opacity:0.45;box-shadow:none;transform:none;cursor:not-allowed;}
         .btn-primary:disabled::after{display:none;}
-
         .btn-reset{background:linear-gradient(135deg,rgba(255,101,132,0.1),rgba(255,101,132,0.06));
             color:#FF6584;border:1px solid rgba(255,101,132,0.22);border-radius:10px;
             padding:9px 18px;font-weight:600;font-size:13px;cursor:pointer;transition:all 0.25s ease;
             display:inline-flex;align-items:center;gap:7px;}
         .btn-reset:hover{background:linear-gradient(135deg,rgba(255,101,132,0.2),rgba(255,101,132,0.12));
             border-color:rgba(255,101,132,0.45);transform:translateY(-1px);}
-
         .btn-dl{border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;
             cursor:pointer;transition:all 0.2s ease;border:1px solid;
             display:inline-flex;align-items:center;gap:5px;white-space:nowrap;flex-shrink:0;}
@@ -77,11 +70,9 @@
         .btn-dl.green:hover{background:linear-gradient(135deg,rgba(67,217,173,0.22),rgba(67,217,173,0.12));transform:translateY(-1px);}
         .btn-dl.purple{background:rgba(108,99,255,0.1);border-color:rgba(108,99,255,0.22);color:#a09aff;}
         .btn-dl.purple:hover{background:rgba(108,99,255,0.2);transform:translateY(-1px);}
-
         .prog-track{background:rgba(255,255,255,0.05);border-radius:50px;height:5px;overflow:hidden;flex:1;}
-        .prog-fill{height:100%;border-radius:50px;
-            background:linear-gradient(90deg,#6C63FF,#9B8FFF,#43D9AD);background-size:200% auto;
-            animation:progMove 2s linear infinite;transition:width 0.5s ease;position:relative;overflow:hidden;}
+        .prog-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,#6C63FF,#9B8FFF,#43D9AD);
+            background-size:200% auto;animation:progMove 2s linear infinite;transition:width 0.3s ease;position:relative;overflow:hidden;}
         .prog-fill::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
             background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);animation:shimmer 1.5s infinite;}
         .prog-fill.done{animation:none;background:#43D9AD;}
@@ -91,22 +82,15 @@
         @keyframes spin{to{transform:rotate(360deg)}}
         @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
         @keyframes popIn{from{opacity:0;transform:scale(0.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-
         .file-chip{display:inline-flex;align-items:center;gap:7px;
             background:rgba(108,99,255,0.08);border:1px solid rgba(108,99,255,0.2);
             border-radius:8px;padding:5px 10px;font-size:12px;color:var(--text);}
         .file-chip button{background:none;border:none;cursor:pointer;color:var(--muted);padding:0;display:flex;align-items:center;transition:color 0.15s;}
         .file-chip button:hover{color:#FF6584;}
-
-        /* Tab bar */
-        .tab-bar{display:inline-flex;background:rgba(255,255,255,0.03);
-            border:1px solid rgba(108,99,255,0.18);border-radius:50px;padding:4px;gap:4px;}
-        .tab-bar button{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:600;
-            transition:all 0.25s ease;border:none;cursor:pointer;color:var(--muted);background:transparent;}
-        .tab-bar button.active{background:linear-gradient(135deg,#6C63FF,#9B8FFF);color:white;
-            box-shadow:0 4px 20px rgba(108,99,255,0.4);}
+        .tab-bar{display:inline-flex;background:rgba(255,255,255,0.03);border:1px solid rgba(108,99,255,0.18);border-radius:50px;padding:4px;gap:4px;}
+        .tab-bar button{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:600;transition:all 0.25s ease;border:none;cursor:pointer;color:var(--muted);background:transparent;}
+        .tab-bar button.active{background:linear-gradient(135deg,#6C63FF,#9B8FFF);color:white;box-shadow:0 4px 20px rgba(108,99,255,0.4);}
         .tab-bar button:not(.active):hover{color:var(--text);background:rgba(255,255,255,0.05);}
-
         .lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:8px;}
         .lang-btn{padding:9px 10px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;
             transition:all 0.2s ease;border:1px solid rgba(108,99,255,0.18);
@@ -116,90 +100,61 @@
         .lang-btn.selected{border-color:#6C63FF;color:white;
             background:linear-gradient(135deg,rgba(108,99,255,0.28),rgba(108,99,255,0.14));
             box-shadow:0 0 16px rgba(108,99,255,0.22);}
-
         .see-all-btn{width:100%;margin-top:10px;padding:10px 16px;border-radius:10px;
             font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s ease;
             border:1px dashed rgba(67,217,173,0.35);background:rgba(67,217,173,0.04);color:#43D9AD;
             display:flex;align-items:center;gap:6px;justify-content:center;}
         .see-all-btn:hover{border-color:rgba(67,217,173,0.6);background:rgba(67,217,173,0.1);transform:translateY(-1px);}
-
-        /* Modal */
         .modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(8,8,16,0.88);
             backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;
             padding:20px;opacity:0;pointer-events:none;transition:opacity 0.25s;}
         .modal-overlay.open{opacity:1;pointer-events:all;}
         .modal-box{background:linear-gradient(145deg,rgba(22,22,50,0.99),rgba(14,14,35,0.99));
-            border:1px solid rgba(108,99,255,0.28);border-radius:20px;
-            width:100%;max-width:680px;max-height:82vh;display:flex;flex-direction:column;
-            box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 80px rgba(108,99,255,0.1);
+            border:1px solid rgba(108,99,255,0.28);border-radius:20px;width:100%;max-width:680px;max-height:82vh;
+            display:flex;flex-direction:column;box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 80px rgba(108,99,255,0.1);
             transform:translateY(24px);transition:transform 0.28s;}
         .modal-overlay.open .modal-box{transform:translateY(0);}
-        .modal-header{padding:20px 22px;border-bottom:1px solid rgba(108,99,255,0.14);
-            display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+        .modal-header{padding:20px 22px;border-bottom:1px solid rgba(108,99,255,0.14);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
         .modal-body{flex:1;overflow-y:auto;padding:18px 22px;}
         .modal-search{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(108,99,255,0.22);
-            border-radius:10px;padding:10px 14px;font-size:14px;color:var(--text);
-            outline:none;transition:border-color 0.2s;margin-bottom:14px;}
+            border-radius:10px;padding:10px 14px;font-size:14px;color:var(--text);outline:none;transition:border-color 0.2s;margin-bottom:14px;}
         .modal-search:focus{border-color:rgba(108,99,255,0.6);}
         .modal-lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:7px;}
-        .modal-lang-btn{padding:9px 12px;border-radius:9px;font-size:13px;font-weight:500;
-            cursor:pointer;transition:all 0.15s;text-align:left;
+        .modal-lang-btn{padding:9px 12px;border-radius:9px;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s;
             border:1px solid rgba(108,99,255,0.13);background:rgba(108,99,255,0.03);color:var(--muted);
             display:flex;align-items:center;gap:8px;}
         .modal-lang-btn:hover{border-color:rgba(108,99,255,0.38);color:var(--text);background:rgba(108,99,255,0.09);}
         .modal-lang-btn.selected{border-color:#6C63FF;color:white;background:linear-gradient(135deg,rgba(108,99,255,0.22),rgba(108,99,255,0.1));}
         .close-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:4px;border-radius:6px;transition:color 0.15s;display:flex;}
         .close-btn:hover{color:#FF6584;}
-
-        /* File rows */
-        .file-row{background:rgba(255,255,255,0.02);border:1px solid rgba(108,99,255,0.1);
-            border-radius:11px;padding:11px 14px;margin-bottom:8px;transition:border-color 0.3s,background 0.3s;}
+        .file-row{background:rgba(255,255,255,0.02);border:1px solid rgba(108,99,255,0.1);border-radius:11px;padding:11px 14px;margin-bottom:8px;transition:border-color 0.3s,background 0.3s;}
         .file-row.active{border-color:rgba(108,99,255,0.35);background:rgba(108,99,255,0.06);}
         .file-row.done{border-color:rgba(67,217,173,0.25);background:rgba(67,217,173,0.04);}
         .file-row.error{border-color:rgba(255,101,132,0.25);background:rgba(255,101,132,0.04);}
-
         .selected-lang-badge{display:inline-flex;align-items:center;gap:6px;
             background:linear-gradient(135deg,rgba(67,217,173,0.13),rgba(67,217,173,0.06));
-            border:1px solid rgba(67,217,173,0.28);border-radius:50px;
-            padding:5px 14px;font-size:13px;color:#43D9AD;font-weight:600;}
+            border:1px solid rgba(67,217,173,0.28);border-radius:50px;padding:5px 14px;font-size:13px;color:#43D9AD;font-weight:600;}
         .stag{display:inline-flex;align-items:center;gap:6px;
             background:linear-gradient(135deg,rgba(108,99,255,0.14),rgba(108,99,255,0.06));
-            border:1px solid rgba(108,99,255,0.24);border-radius:50px;
-            padding:4px 13px;font-size:12px;color:#a09aff;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;}
+            border:1px solid rgba(108,99,255,0.24);border-radius:50px;padding:4px 13px;
+            font-size:12px;color:#a09aff;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;}
         .step-label{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:10px;}
-        .parallel-badge{display:inline-flex;align-items:center;gap:5px;
-            background:rgba(255,184,108,0.1);border:1px solid rgba(255,184,108,0.25);
-            border-radius:50px;padding:3px 10px;font-size:11px;color:#FFB86C;font-weight:600;}
-
-        /* Usage / Limit styles */
-        .usage-ring-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;}
-        .usage-ring-wrap svg{transform:rotate(-90deg);}
-        .usage-ring-center{position:absolute;text-align:center;}
-
-        .limit-card{background:linear-gradient(145deg,rgba(18,18,42,0.9),rgba(12,12,28,0.95));
-            border:1px solid rgba(108,99,255,0.14);border-radius:14px;padding:16px 18px;transition:all 0.25s ease;}
+        .limit-card{background:linear-gradient(145deg,rgba(18,18,42,0.9),rgba(12,12,28,0.95));border:1px solid rgba(108,99,255,0.14);border-radius:14px;padding:16px 18px;transition:all 0.25s ease;}
         .limit-card:hover{border-color:rgba(108,99,255,0.28);}
-
-        /* Limit reached POPUP */
         .popup-overlay{position:fixed;inset:0;z-index:2000;background:rgba(8,8,16,0.92);
             backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;
             padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
         .popup-overlay.open{opacity:1;pointer-events:all;}
         .popup-box{background:linear-gradient(145deg,rgba(22,22,50,0.99),rgba(14,14,35,0.99));
-            border:1px solid rgba(255,101,132,0.35);border-radius:24px;
-            width:100%;max-width:420px;padding:32px 28px;text-align:center;
-            box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 60px rgba(255,101,132,0.12);
-            animation:popIn 0.35s ease;}
-
-        /* Countdown digits */
+            border:1px solid rgba(255,101,132,0.35);border-radius:24px;width:100%;max-width:420px;
+            padding:32px 28px;text-align:center;
+            box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 60px rgba(255,101,132,0.12);animation:popIn 0.35s ease;}
         .countdown-block{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px 0;}
         .cd-unit{display:flex;flex-direction:column;align-items:center;gap:4px;}
-        .cd-num{background:rgba(255,101,132,0.12);border:1px solid rgba(255,101,132,0.25);
-            border-radius:10px;padding:10px 14px;font-size:28px;font-weight:800;
-            color:#FF6584;font-family:'Syne',sans-serif;min-width:56px;text-align:center;line-height:1;}
+        .cd-num{background:rgba(255,101,132,0.12);border:1px solid rgba(255,101,132,0.25);border-radius:10px;
+            padding:10px 14px;font-size:28px;font-weight:800;color:#FF6584;font-family:'Syne',sans-serif;min-width:56px;text-align:center;line-height:1;}
         .cd-label{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;}
         .cd-sep{font-size:24px;font-weight:800;color:rgba(255,101,132,0.4);margin-bottom:16px;}
-
         ::-webkit-scrollbar{width:5px;}
         ::-webkit-scrollbar-track{background:transparent;}
         ::-webkit-scrollbar-thumb{background:rgba(108,99,255,0.35);border-radius:10px;}
@@ -244,10 +199,8 @@
         <div style="font-size:20px;font-weight:800;color:#FF6584;margin-bottom:8px;font-family:'Syne',sans-serif;">Daily Limit Reached!</div>
         <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;">
             You have used your <strong style="color:var(--text);">10 files/day</strong> limit.<br>
-            MyMemory API quota resets daily at <strong style="color:var(--text);">midnight UTC (5:00 AM PKT)</strong>.
+            Quota resets daily at <strong style="color:var(--text);">midnight UTC (5:00 AM PKT)</strong>.
         </div>
-
-        <!-- Countdown -->
         <div style="background:rgba(255,101,132,0.06);border:1px solid rgba(255,101,132,0.18);border-radius:14px;padding:16px;margin-bottom:20px;">
             <div style="font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;">Resets in</div>
             <div class="countdown-block">
@@ -259,7 +212,6 @@
             </div>
             <div style="font-size:12px;color:#a09aff;" id="popup-reset-label"></div>
         </div>
-
         <button onclick="closeLimitPopup()" style="width:100%;background:linear-gradient(135deg,rgba(255,101,132,0.15),rgba(255,101,132,0.08));border:1px solid rgba(255,101,132,0.3);color:#FF6584;border-radius:12px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;">
             Got it — Come back later
         </button>
@@ -267,7 +219,6 @@
 </div>
 
 <div class="main-wrap">
-    <!-- Header -->
     <div class="text-center mb-7 fu" style="padding-top:16px;">
         <div class="inline-flex items-center gap-3 mb-3">
             <span class="brand font-bold text-xl" style="background:linear-gradient(135deg,#a09aff,#6C63FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">XtremeLabs LLC</span>
@@ -278,10 +229,8 @@
         <p style="color:var(--muted);font-size:14px;">Upload MD files &nbsp;•&nbsp; Choose language &nbsp;•&nbsp; Download translated files</p>
     </div>
 
-    <!-- Card -->
     <div class="glass max-w-3xl w-full mx-auto flex-1 p-5 md:p-7 fu1">
 
-        <!-- Tab bar + Reset -->
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:26px;">
             <div class="tab-bar">
                 <button id="tab-translator" class="active" onclick="switchTab('translator')">📄 &nbsp;Translator</button>
@@ -293,16 +242,14 @@
             </button>
         </div>
 
-        <!-- ═══ TRANSLATOR TAB ═══ -->
+        <!-- TRANSLATOR TAB -->
         <div id="section-translator">
-
-            <!-- Info banner -->
             <div style="background:linear-gradient(135deg,rgba(255,184,108,0.08),rgba(255,184,108,0.04));border:1px solid rgba(255,184,108,0.22);border-radius:12px;padding:12px 16px;margin-bottom:22px;display:flex;align-items:flex-start;gap:10px;">
                 <span style="font-size:18px;flex-shrink:0;">💡</span>
                 <div style="font-size:13px;color:#FFB86C;line-height:1.6;">
-                    <strong>Daily Limit:</strong> You can translate <strong>7–10 files per day</strong> for best results.
-                    Limit resets every day at <strong>5:00 AM PKT</strong> (midnight UTC).
-                    Check the <strong>Daily Usage</strong> tab to see remaining quota.
+                    <strong>Daily Limit:</strong> Translate <strong>7–10 files/day</strong> for best results.
+                    Limit resets every day at <strong>5:00 AM PKT</strong>.
+                    Check <strong>Daily Usage</strong> tab to track remaining quota.
                 </div>
             </div>
 
@@ -354,12 +301,10 @@
                 <div style="background:rgba(108,99,255,0.07);border:1px solid rgba(108,99,255,0.18);border-radius:12px;padding:14px 16px;margin-bottom:14px;">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
                         <span style="font-size:13px;font-weight:600;" id="overallLabel">Processing...</span>
-                        <div style="display:flex;align-items:center;gap:10px;">
-                            <span class="parallel-badge" id="activeCount">0 active</span>
-                            <span style="font-size:12px;color:#a09aff;font-weight:600;" id="overallCount">0 / 0</span>
-                        </div>
+                        <span style="font-size:12px;color:#a09aff;font-weight:600;" id="overallCount">0 / 0</span>
                     </div>
                     <div class="prog-track" style="height:8px;"><div id="overallBar" class="prog-fill" style="width:0%"></div></div>
+                    <div style="font-size:11px;color:var(--muted);margin-top:6px;" id="overallDetail"></div>
                 </div>
                 <div id="fileProgressList"></div>
             </div>
@@ -373,7 +318,7 @@
                                 <svg width="18" height="18" fill="none" stroke="#43D9AD" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <div style="font-size:14px;font-weight:700;color:#43D9AD;" id="resultTitle">Translation Complete!</div>
+                                <div style="font-size:14px;font-weight:700;color:#43D9AD;" id="resultTitle">Done!</div>
                                 <div style="font-size:12px;color:var(--muted);" id="resultSubtitle"></div>
                             </div>
                         </div>
@@ -385,33 +330,26 @@
                 </div>
                 <div id="resultFileList"></div>
             </div>
+        </div>
 
-        </div><!-- end translator tab -->
-
-        <!-- ═══ USAGE TAB ═══ -->
+        <!-- USAGE TAB -->
         <div id="section-usage" style="display:none;">
             <div style="font-size:12px;font-weight:600;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px;">Daily Translation Quota</div>
-
-            <!-- Reset countdown -->
             <div style="background:rgba(108,99,255,0.07);border:1px solid rgba(108,99,255,0.18);border-radius:12px;padding:14px 16px;margin-bottom:20px;">
                 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
-                    <div style="font-size:13px;color:var(--muted);">🕐 Quota resets daily at <strong style="color:var(--text);">midnight UTC = 5:00 AM PKT</strong></div>
+                    <div style="font-size:13px;color:var(--muted);">🕐 Quota resets at <strong style="color:var(--text);">midnight UTC = 5:00 AM PKT</strong></div>
                     <div style="font-size:12px;font-weight:700;" id="usageCountdown"></div>
                 </div>
                 <div style="font-size:12px;color:#a09aff;font-weight:500;" id="usageResetLabel"></div>
             </div>
-
-            <!-- Files used today -->
             <div class="limit-card" style="margin-bottom:14px;">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
                     <div>
                         <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Files Translated Today</div>
-                        <div style="font-size:12px;color:var(--muted);">Recommended limit: 7–10 files/day</div>
+                        <div style="font-size:12px;color:var(--muted);">Recommended: 7–10 files/day</div>
                     </div>
-                    <button onclick="resetUsage()" style="background:rgba(255,101,132,0.08);border:1px solid rgba(255,101,132,0.2);color:#FF6584;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;" title="Reset counter (for testing)">Reset Counter</button>
+                    <button onclick="resetUsage()" style="background:rgba(255,101,132,0.08);border:1px solid rgba(255,101,132,0.2);color:#FF6584;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:600;cursor:pointer;">Reset Counter</button>
                 </div>
-
-                <!-- Usage bar -->
                 <div style="margin-bottom:12px;">
                     <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
                         <span style="font-size:13px;font-weight:600;" id="usedLabel">0 files used</span>
@@ -421,12 +359,8 @@
                         <div id="usageBar" style="height:100%;border-radius:50px;transition:width 0.5s ease,background 0.3s ease;width:0%;background:linear-gradient(90deg,#43D9AD,#6C63FF);"></div>
                     </div>
                 </div>
-
-                <!-- File slots visual -->
                 <div style="display:flex;gap:6px;flex-wrap:wrap;" id="fileSlots"></div>
             </div>
-
-            <!-- Stats cards -->
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
                 <div class="limit-card" style="text-align:center;">
                     <div style="font-size:28px;font-weight:800;color:#43D9AD;font-family:'Syne',sans-serif;" id="statUsed">0</div>
@@ -437,20 +371,18 @@
                     <div style="font-size:12px;color:var(--muted);margin-top:4px;">Remaining</div>
                 </div>
             </div>
-
-            <!-- Info note -->
             <div style="background:rgba(67,217,173,0.05);border:1px solid rgba(67,217,173,0.15);border-radius:12px;padding:14px 16px;">
                 <div style="font-size:13px;color:#43D9AD;font-weight:600;margin-bottom:6px;">ℹ️ How limits work</div>
                 <div style="font-size:12px;color:var(--muted);line-height:1.7;">
-                    • MyMemory API allows <strong style="color:var(--text);">~10,000 words/day</strong> free<br>
+                    • MyMemory API allows ~10,000 words/day free<br>
                     • Average MD file = ~800–1000 words<br>
                     • Safe limit = <strong style="color:var(--text);">7–10 files/day</strong><br>
-                    • Limit auto-resets at <strong style="color:var(--text);">5:00 AM PKT</strong> every day
+                    • Resets at <strong style="color:var(--text);">5:00 AM PKT</strong> every day
                 </div>
             </div>
-        </div><!-- end usage tab -->
+        </div>
 
-    </div><!-- end glass -->
+    </div>
 
     <!-- Footer -->
     <div class="fu2" style="margin-top:32px;padding:0 16px 28px;">
@@ -475,74 +407,55 @@
 </div>
 
 <script>
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // CONSTANTS
-// ═══════════════════════════════════════
-const DAILY_LIMIT  = 10;   // max files per day
-const CONCURRENCY  = 3;    // parallel files
-const STORAGE_KEY  = 'xtlabs_md_usage';
+// ═══════════════════════════════
+const DAILY_LIMIT = 10;
+const STORAGE_KEY = 'xtlabs_md_usage';
 
-// ═══════════════════════════════════════
-// USAGE TRACKING (localStorage)
-// ═══════════════════════════════════════
-function getTodayUTC() {
-    return new Date().toISOString().slice(0, 10); // "2026-03-18"
+// MyMemory language code corrections
+const LANG_MAP = {'zh-CN':'zh','zh-TW':'zh-TW','iw':'he','jw':'jv'};
+function toMM(code){ return LANG_MAP[code] || code; }
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ═══════════════════════════════
+// USAGE TRACKING
+// ═══════════════════════════════
+function getTodayUTC(){ return new Date().toISOString().slice(0,10); }
+function getUsage(){
+    try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return {date:getTodayUTC(),count:0};
+        const d = JSON.parse(raw);
+        if(d.date !== getTodayUTC()) return {date:getTodayUTC(),count:0};
+        return d;
+    }catch{ return {date:getTodayUTC(),count:0}; }
+}
+function saveUsage(n){ localStorage.setItem(STORAGE_KEY,JSON.stringify({date:getTodayUTC(),count:n})); }
+function addUsage(n){ const u=getUsage(); saveUsage(u.count+n); }
+function resetUsage(){ saveUsage(0); updateUsageUI(); }
+function getRemaining(){ return Math.max(0, DAILY_LIMIT - getUsage().count); }
+
+// ═══════════════════════════════
+// FLAG HELPER
+// ═══════════════════════════════
+function flagImg(cc, size=20){
+    if(!cc) return `<span style="width:${size}px;height:${Math.round(size*.75)}px;display:inline-flex;align-items:center;justify-content:center;background:rgba(108,99,255,0.15);border-radius:3px;font-size:10px;color:#a09aff;flex-shrink:0;">🌐</span>`;
+    return `<img src="https://flagcdn.com/w40/${cc}.png" width="${size}" height="${Math.round(size*.75)}" alt="" style="border-radius:3px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`;
 }
 
-function getUsage() {
-    try {
-        const raw  = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return { date: getTodayUTC(), count: 0 };
-        const data = JSON.parse(raw);
-        // If stored date != today → reset
-        if (data.date !== getTodayUTC()) return { date: getTodayUTC(), count: 0 };
-        return data;
-    } catch { return { date: getTodayUTC(), count: 0 }; }
-}
-
-function saveUsage(count) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ date: getTodayUTC(), count }));
-}
-
-function addFilesToUsage(n) {
-    const u = getUsage();
-    u.count += n;
-    saveUsage(u.count);
-}
-
-function resetUsage() {
-    saveUsage(0);
-    updateUsageUI();
-}
-
-function getRemainingFiles() {
-    return Math.max(0, DAILY_LIMIT - getUsage().count);
-}
-
-// ═══════════════════════════════════════
-// FLAG IMAGE HELPER
-// ═══════════════════════════════════════
-function flagImg(cc, size = 20) {
-    if (!cc) return `<span style="width:${size}px;height:${Math.round(size*0.75)}px;display:inline-flex;align-items:center;justify-content:center;background:rgba(108,99,255,0.15);border-radius:3px;font-size:10px;color:#a09aff;flex-shrink:0;">🌐</span>`;
-    return `<img src="https://flagcdn.com/w40/${cc}.png" width="${size}" height="${Math.round(size*0.75)}" alt="" style="border-radius:3px;object-fit:cover;flex-shrink:0;" onerror="this.style.display='none'">`;
-}
-
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // LANGUAGE DATA
-// ═══════════════════════════════════════
-const TOP_LANGS = [
-    {code:'ur',  name:'Urdu',    cc:'pk'},
-    {code:'ar',  name:'Arabic',  cc:'sa'},
-    {code:'zh-CN',name:'Chinese',cc:'cn'},
-    {code:'fr',  name:'French',  cc:'fr'},
-    {code:'es',  name:'Spanish', cc:'es'},
-    {code:'de',  name:'German',  cc:'de'},
-    {code:'tr',  name:'Turkish', cc:'tr'},
-    {code:'hi',  name:'Hindi',   cc:'in'},
-    {code:'ru',  name:'Russian', cc:'ru'},
-    {code:'ja',  name:'Japanese',cc:'jp'},
+// ═══════════════════════════════
+const TOP_LANGS=[
+    {code:'ur',name:'Urdu',cc:'pk'},{code:'ar',name:'Arabic',cc:'sa'},
+    {code:'zh-CN',name:'Chinese',cc:'cn'},{code:'fr',name:'French',cc:'fr'},
+    {code:'es',name:'Spanish',cc:'es'},{code:'de',name:'German',cc:'de'},
+    {code:'tr',name:'Turkish',cc:'tr'},{code:'hi',name:'Hindi',cc:'in'},
+    {code:'ru',name:'Russian',cc:'ru'},{code:'ja',name:'Japanese',cc:'jp'},
 ];
-const ALL_LANGS = [
+const ALL_LANGS=[
     {code:'af',name:'Afrikaans',cc:'za'},{code:'sq',name:'Albanian',cc:'al'},
     {code:'am',name:'Amharic',cc:'et'},{code:'ar',name:'Arabic',cc:'sa'},
     {code:'hy',name:'Armenian',cc:'am'},{code:'az',name:'Azerbaijani',cc:'az'},
@@ -597,249 +510,327 @@ const ALL_LANGS = [
     {code:'zu',name:'Zulu',cc:'za'},
 ];
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // STATE
-// ═══════════════════════════════════════
-let uploadedFiles   = [];
-let selectedLang    = null;
-let translatedFiles = [];
-let isTranslating   = false;
-let countdownTimer  = null;
+// ═══════════════════════════════
+let uploadedFiles=[], selectedLang=null, translatedFiles=[], isTranslating=false;
+let countdownTimer=null;
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // INIT
-// ═══════════════════════════════════════
-function init() {
-    renderMainLangs();
-    renderAllLangs(ALL_LANGS);
-    updateUsageUI();
+// ═══════════════════════════════
+function init(){ renderMainLangs(); renderAllLangs(ALL_LANGS); updateUsageUI(); }
+
+// ═══════════════════════════════
+// TABS
+// ═══════════════════════════════
+function switchTab(tab){
+    document.getElementById('section-translator').style.display = tab==='translator'?'block':'none';
+    document.getElementById('section-usage').style.display      = tab==='usage'?'block':'none';
+    document.getElementById('tab-translator').classList.toggle('active', tab==='translator');
+    document.getElementById('tab-usage').classList.toggle('active', tab==='usage');
+    if(tab==='usage'){ updateUsageUI(); startCountdown(); }
 }
 
-// ═══════════════════════════════════════
-// TAB SWITCHING
-// ═══════════════════════════════════════
-function switchTab(tab) {
-    document.getElementById('section-translator').style.display = tab === 'translator' ? 'block' : 'none';
-    document.getElementById('section-usage').style.display      = tab === 'usage'      ? 'block' : 'none';
-    document.getElementById('tab-translator').classList.toggle('active', tab === 'translator');
-    document.getElementById('tab-usage').classList.toggle('active', tab === 'usage');
-    if (tab === 'usage') { updateUsageUI(); startUsageCountdown(); }
-}
-
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // USAGE UI
-// ═══════════════════════════════════════
-function updateUsageUI() {
-    const usage   = getUsage();
-    const used    = usage.count;
-    const remain  = Math.max(0, DAILY_LIMIT - used);
-    const pct     = Math.min(100, Math.round((used / DAILY_LIMIT) * 100));
-    const barColor = pct >= 100 ? '#FF6584' : pct >= 70 ? '#FFB86C' : 'linear-gradient(90deg,#43D9AD,#6C63FF)';
-
-    // Bar
-    const bar = document.getElementById('usageBar');
-    if (bar) { bar.style.width = pct + '%'; bar.style.background = barColor; }
-
-    // Labels
-    const ul = document.getElementById('usedLabel');
-    const rl = document.getElementById('remainLabel');
-    if (ul) ul.textContent = `${used} file${used !== 1 ? 's' : ''} used`;
-    if (rl) { rl.textContent = `${remain} remaining`; rl.style.color = remain === 0 ? '#FF6584' : remain <= 3 ? '#FFB86C' : '#43D9AD'; }
-
-    // Stat cards
-    const su = document.getElementById('statUsed');
-    const sr = document.getElementById('statRemain');
-    if (su) { su.textContent = used; su.style.color = pct >= 100 ? '#FF6584' : '#43D9AD'; }
-    if (sr) { sr.textContent = remain; sr.style.color = remain === 0 ? '#FF6584' : remain <= 3 ? '#FFB86C' : '#a09aff'; }
-
-    // File slots visual
-    const slots = document.getElementById('fileSlots');
-    if (slots) {
-        slots.innerHTML = Array.from({ length: DAILY_LIMIT }, (_, i) => {
-            const isUsed = i < used;
-            const color  = isUsed ? (pct >= 100 ? 'rgba(255,101,132,0.4)' : 'rgba(108,99,255,0.5)') : 'rgba(255,255,255,0.06)';
-            const border = isUsed ? (pct >= 100 ? 'rgba(255,101,132,0.5)' : 'rgba(108,99,255,0.4)') : 'rgba(255,255,255,0.08)';
-            return `<div style="width:28px;height:28px;border-radius:7px;background:${color};border:1px solid ${border};transition:all 0.3s;display:flex;align-items:center;justify-content:center;font-size:11px;">${isUsed ? '✓' : ''}</div>`;
-        }).join('');
-    }
+// ═══════════════════════════════
+function updateUsageUI(){
+    const used   = getUsage().count;
+    const remain = Math.max(0, DAILY_LIMIT - used);
+    const pct    = Math.min(100, Math.round((used/DAILY_LIMIT)*100));
+    const barColor = pct>=100?'#FF6584': pct>=70?'#FFB86C':'linear-gradient(90deg,#43D9AD,#6C63FF)';
+    const bar=document.getElementById('usageBar');
+    if(bar){bar.style.width=pct+'%';bar.style.background=barColor;}
+    const ul=document.getElementById('usedLabel'), rl=document.getElementById('remainLabel');
+    if(ul) ul.textContent=`${used} file${used!==1?'s':''} used`;
+    if(rl){rl.textContent=`${remain} remaining`;rl.style.color=remain===0?'#FF6584':remain<=3?'#FFB86C':'#43D9AD';}
+    const su=document.getElementById('statUsed'), sr=document.getElementById('statRemain');
+    if(su){su.textContent=used;su.style.color=pct>=100?'#FF6584':'#43D9AD';}
+    if(sr){sr.textContent=remain;sr.style.color=remain===0?'#FF6584':remain<=3?'#FFB86C':'#a09aff';}
+    const slots=document.getElementById('fileSlots');
+    if(slots) slots.innerHTML=Array.from({length:DAILY_LIMIT},(_,i)=>{
+        const used_=i<used;
+        const c=used_?(pct>=100?'rgba(255,101,132,0.4)':'rgba(108,99,255,0.5)'):'rgba(255,255,255,0.06)';
+        const b=used_?(pct>=100?'rgba(255,101,132,0.5)':'rgba(108,99,255,0.4)'):'rgba(255,255,255,0.08)';
+        return `<div style="width:28px;height:28px;border-radius:7px;background:${c};border:1px solid ${b};display:flex;align-items:center;justify-content:center;font-size:11px;">${used_?'✓':''}</div>`;
+    }).join('');
 }
 
-// ═══════════════════════════════════════
-// COUNTDOWN — next midnight UTC
-// ═══════════════════════════════════════
-function getNextMidnightUTC() {
-    const now   = new Date();
-    const next  = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0));
-    return next;
+// ═══════════════════════════════
+// COUNTDOWN
+// ═══════════════════════════════
+function getNextReset(){
+    const n=new Date();
+    return new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()+1,0,0,0));
 }
-
-function formatPKT(utcDate) {
-    const pkt  = new Date(utcDate.getTime() + 5 * 3600000);
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    const mons = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    return `${days[pkt.getUTCDay()]}, ${pkt.getUTCDate()} ${mons[pkt.getUTCMonth()]} at ${String(pkt.getUTCHours()).padStart(2,'0')}:${String(pkt.getUTCMinutes()).padStart(2,'0')} PKT`;
+function formatPKT(d){
+    const p=new Date(d.getTime()+5*3600000);
+    const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const mons=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${days[p.getUTCDay()]} ${p.getUTCDate()} ${mons[p.getUTCMonth()]} at ${String(p.getUTCHours()).padStart(2,'0')}:${String(p.getUTCMinutes()).padStart(2,'0')} PKT`;
 }
-
-function getCountdownParts() {
-    const diff = getNextMidnightUTC() - new Date();
-    if (diff <= 0) return { h:0, m:0, s:0, diff:0 };
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    return { h, m, s, diff };
-}
-
-function pad(n) { return String(n).padStart(2,'0'); }
-
-function startUsageCountdown() {
+function pad(n){return String(n).padStart(2,'0');}
+function startCountdown(){
     clearInterval(countdownTimer);
-    function tick() {
-        const { h, m, s } = getCountdownParts();
-        const timeStr = `${pad(h)}h ${pad(m)}m ${pad(s)}s`;
-        const el  = document.getElementById('usageCountdown');
-        const lbl = document.getElementById('usageResetLabel');
-        if (el)  { el.textContent = `⏱ Resets in: ${timeStr}`; el.style.color = h < 2 ? '#FFB86C' : '#a09aff'; }
-        if (lbl) lbl.textContent  = `Next reset: ${formatPKT(getNextMidnightUTC())}`;
-
-        // Also update popup countdown if open
-        const cdh = document.getElementById('cd-h');
-        const cdm = document.getElementById('cd-m');
-        const cds = document.getElementById('cd-s');
-        const prl = document.getElementById('popup-reset-label');
-        if (cdh) cdh.textContent = pad(h);
-        if (cdm) cdm.textContent = pad(m);
-        if (cds) cds.textContent = pad(s);
-        if (prl) prl.textContent = `Resets: ${formatPKT(getNextMidnightUTC())}`;
+    function tick(){
+        const diff=getNextReset()-new Date();
+        if(diff<=0) return;
+        const h=Math.floor(diff/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+        const str=`${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+        const el=document.getElementById('usageCountdown'), lbl=document.getElementById('usageResetLabel');
+        if(el){el.textContent=`⏱ Resets in: ${str}`;el.style.color=h<2?'#FFB86C':'#a09aff';}
+        if(lbl) lbl.textContent=`Next reset: ${formatPKT(getNextReset())}`;
+        // popup countdown
+        const cdh=document.getElementById('cd-h'),cdm=document.getElementById('cd-m'),cds=document.getElementById('cd-s'),prl=document.getElementById('popup-reset-label');
+        if(cdh) cdh.textContent=pad(h);if(cdm) cdm.textContent=pad(m);if(cds) cds.textContent=pad(s);
+        if(prl) prl.textContent=`Resets: ${formatPKT(getNextReset())}`;
     }
-    tick();
-    countdownTimer = setInterval(tick, 1000);
+    tick(); countdownTimer=setInterval(tick,1000);
 }
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // LIMIT POPUP
-// ═══════════════════════════════════════
-function showLimitPopup() {
-    startUsageCountdown(); // start countdown in popup too
-    document.getElementById('limitPopup').classList.add('open');
-}
-function closeLimitPopup() {
-    document.getElementById('limitPopup').classList.remove('open');
-}
+// ═══════════════════════════════
+function showLimitPopup(){ startCountdown(); document.getElementById('limitPopup').classList.add('open'); }
+function closeLimitPopup(){ document.getElementById('limitPopup').classList.remove('open'); }
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // FILES
-// ═══════════════════════════════════════
-function handleFiles(e) {
-    const files = Array.from(e.target.files).slice(0, 35);
-    if (!files.length) return;
-
-    // Check limit before even loading
-    const remain = getRemainingFiles();
-    if (remain === 0) { showLimitPopup(); e.target.value = ''; return; }
-
-    uploadedFiles = [];
-    Promise.all(files.map(f => new Promise(res => {
-        const r = new FileReader();
-        r.onload = ev => { uploadedFiles.push({ name: f.name, content: ev.target.result }); res(); };
+// ═══════════════════════════════
+function handleFiles(e){
+    const files=Array.from(e.target.files).slice(0,35);
+    if(!files.length) return;
+    if(getRemaining()===0){showLimitPopup();e.target.value='';return;}
+    uploadedFiles=[];
+    Promise.all(files.map(f=>new Promise(res=>{
+        const r=new FileReader();
+        r.onload=ev=>{uploadedFiles.push({name:f.name,content:ev.target.result});res();};
         r.readAsText(f);
-    }))).then(() => {
-        uploadedFiles.sort((a, b) => a.name.localeCompare(b.name));
+    }))).then(()=>{
+        uploadedFiles.sort((a,b)=>a.name.localeCompare(b.name));
         renderChips();
         document.getElementById('uploadZone').classList.add('loaded');
         checkReady();
     });
 }
-
-function renderChips() {
-    document.getElementById('fileChips').style.display = 'block';
-    document.getElementById('fileCountLabel').textContent = `${uploadedFiles.length} file${uploadedFiles.length !== 1 ? 's' : ''} selected`;
-    document.getElementById('chipsContainer').innerHTML = uploadedFiles.map((f, i) =>
+function renderChips(){
+    document.getElementById('fileChips').style.display='block';
+    document.getElementById('fileCountLabel').textContent=`${uploadedFiles.length} file${uploadedFiles.length!==1?'s':''} selected`;
+    document.getElementById('chipsContainer').innerHTML=uploadedFiles.map((f,i)=>
         `<div class="file-chip">
             <svg width="12" height="12" fill="none" stroke="#a09aff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             ${escHtml(f.name)}
-            <button onclick="removeFile(${i})">
-                <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+            <button onclick="removeFile(${i})"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
         </div>`
     ).join('');
 }
-
-function removeFile(idx) {
-    uploadedFiles.splice(idx, 1);
-    if (!uploadedFiles.length) {
-        document.getElementById('fileChips').style.display = 'none';
-        document.getElementById('uploadZone').classList.remove('loaded');
-        document.getElementById('mdInput').value = '';
-    } else renderChips();
+function removeFile(idx){
+    uploadedFiles.splice(idx,1);
+    if(!uploadedFiles.length){document.getElementById('fileChips').style.display='none';document.getElementById('uploadZone').classList.remove('loaded');document.getElementById('mdInput').value='';}
+    else renderChips();
     checkReady();
 }
+function checkReady(){ document.getElementById('translateBtn').disabled=!(uploadedFiles.length>0&&selectedLang); }
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // LANGUAGE
-// ═══════════════════════════════════════
-function renderMainLangs() {
-    document.getElementById('mainLangGrid').innerHTML = TOP_LANGS.map(l =>
-        `<button class="lang-btn" id="mlang-${l.code}" onclick="selectLang('${l.code}','${l.name}','${l.cc}')">
-            ${flagImg(l.cc, 20)}<span>${l.name}</span></button>`
+// ═══════════════════════════════
+function renderMainLangs(){
+    document.getElementById('mainLangGrid').innerHTML=TOP_LANGS.map(l=>
+        `<button class="lang-btn" id="mlang-${l.code}" onclick="selectLang('${l.code}','${l.name}','${l.cc}')">${flagImg(l.cc,20)}<span>${l.name}</span></button>`
     ).join('');
 }
-function renderAllLangs(list) {
-    document.getElementById('allLangGrid').innerHTML = list.map(l =>
-        `<button class="modal-lang-btn ${selectedLang?.code === l.code ? 'selected' : ''}" id="alang-${l.code}"
-            onclick="selectLang('${l.code}','${l.name}','${l.cc}',true)">
-            ${flagImg(l.cc, 20)}<span>${l.name}</span></button>`
+function renderAllLangs(list){
+    document.getElementById('allLangGrid').innerHTML=list.map(l=>
+        `<button class="modal-lang-btn ${selectedLang?.code===l.code?'selected':''}" id="alang-${l.code}" onclick="selectLang('${l.code}','${l.name}','${l.cc}',true)">${flagImg(l.cc,20)}<span>${l.name}</span></button>`
     ).join('');
 }
-function filterLanguages(q) {
-    renderAllLangs(q.trim() ? ALL_LANGS.filter(l => l.name.toLowerCase().includes(q.toLowerCase())) : ALL_LANGS);
-}
-function selectLang(code, name, cc, fromModal = false) {
-    selectedLang = { code, name, cc };
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('selected'));
-    document.querySelectorAll('.modal-lang-btn').forEach(b => b.classList.remove('selected'));
+function filterLanguages(q){ renderAllLangs(q.trim()?ALL_LANGS.filter(l=>l.name.toLowerCase().includes(q.toLowerCase())):ALL_LANGS); }
+function selectLang(code,name,cc,fromModal=false){
+    selectedLang={code,name,cc};
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('selected'));
+    document.querySelectorAll('.modal-lang-btn').forEach(b=>b.classList.remove('selected'));
     document.getElementById(`mlang-${code}`)?.classList.add('selected');
     document.getElementById(`alang-${code}`)?.classList.add('selected');
-    document.getElementById('selectedBadge').style.display = 'block';
-    document.getElementById('selectedBadgeText').innerHTML = `${flagImg(cc,16)} &nbsp;Translating to: <strong>${name}</strong>`;
+    document.getElementById('selectedBadge').style.display='block';
+    document.getElementById('selectedBadgeText').innerHTML=`${flagImg(cc,16)} &nbsp;Translating to: <strong>${name}</strong>`;
     checkReady();
-    if (fromModal) setTimeout(closeModal, 280);
+    if(fromModal) setTimeout(closeModal,280);
+}
+function openModal(){ document.getElementById('langSearch').value=''; renderAllLangs(ALL_LANGS); document.getElementById('langModal').classList.add('open'); }
+function closeModal(){ document.getElementById('langModal').classList.remove('open'); }
+document.getElementById('langModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+
+// ═══════════════════════════════════════════════
+// TRANSLATION ENGINE — Browser side (no timeout!)
+// ═══════════════════════════════════════════════
+
+// MyMemory single call
+async function myMemory(text, tl, retries=3){
+    if(!text||!text.trim()) return text;
+    if(/^[\s\d\W]+$/.test(text)) return text;
+    const code=toMM(tl);
+    const url=`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${encodeURIComponent('en|'+code)}`;
+    for(let i=0;i<retries;i++){
+        try{
+            const res=await fetch(url);
+            if(res.status===429||res.status===503){await sleep(2000*(i+1));continue;}
+            if(!res.ok) throw new Error(`HTTP ${res.status}`);
+            const d=await res.json();
+            if(d.responseStatus===200&&d.responseData?.translatedText){
+                const t=d.responseData.translatedText;
+                if(t.includes('MYMEMORY WARNING')) throw new Error('Quota');
+                return t;
+            }
+            if(d.responseStatus===429) throw new Error('Quota');
+            return text;
+        }catch(err){
+            if(i<retries-1) await sleep(1200*(i+1));
+            else return text;
+        }
+    }
+    return text;
 }
 
-// ═══════════════════════════════════════
-// MODAL
-// ═══════════════════════════════════════
-function openModal()  { document.getElementById('langSearch').value=''; renderAllLangs(ALL_LANGS); document.getElementById('langModal').classList.add('open'); }
-function closeModal() { document.getElementById('langModal').classList.remove('open'); }
-document.getElementById('langModal').addEventListener('click', e => { if (e.target===e.currentTarget) closeModal(); });
-
-function checkReady() {
-    document.getElementById('translateBtn').disabled = !(uploadedFiles.length > 0 && selectedLang);
+// Translate text (handles long text)
+async function txText(text, tl){
+    if(!text||!text.trim()) return text;
+    if(text.length<=4500) return myMemory(text,tl);
+    const sents=text.match(/[^.!?\n]+[.!?\n]*/g)||[text];
+    const chunks=[]; let cur='';
+    for(const s of sents){ if((cur+s).length>4500){if(cur)chunks.push(cur.trim());cur=s;}else cur+=s; }
+    if(cur.trim())chunks.push(cur.trim());
+    const out=[];
+    for(const c of chunks){out.push(await myMemory(c,tl));await sleep(150);}
+    return out.join(' ');
 }
 
-// ═══════════════════════════════════════
-// PARALLEL TRANSLATION
-// ═══════════════════════════════════════
-async function startTranslation() {
-    if (!uploadedFiles.length || !selectedLang || isTranslating) return;
+// Translate inline — skip code/urls, handle bold/italic/links
+async function txInline(text, tl){
+    if(!text||!text.trim()) return text;
+    const pat=/(`[^`\n]+`|!\[[^\]]*\]\([^\)]*\)|\[([^\]]+)\]\((https?:\/\/[^\)]+)\)|https?:\/\/[^\s\)\]"'<>]+)/g;
+    const parts=[]; let last=0,m;
+    pat.lastIndex=0;
+    while((m=pat.exec(text))!==null){
+        if(m.index>last) parts.push({k:'tx',t:text.slice(last,m.index)});
+        if(m[2]!==undefined&&m[3]!==undefined) parts.push({k:'link',lt:m[2],url:m[3]});
+        else parts.push({k:'skip',t:m[0]});
+        last=m.index+m[0].length;
+    }
+    if(last<text.length) parts.push({k:'tx',t:text.slice(last)});
+    let out='';
+    for(const p of parts){
+        if(p.k==='skip') out+=p.t;
+        else if(p.k==='link') out+=`[${await txText(p.lt,tl)}](${p.url})`;
+        else out+=p.t.trim()?await txMarkers(p.t,tl):p.t;
+    }
+    return out;
+}
 
-    // Check daily limit
-    if (getRemainingFiles() === 0) { showLimitPopup(); return; }
+// Preserve **bold** / *italic*
+async function txMarkers(text, tl){
+    if(!text.trim()) return text;
+    const mk=[];
+    let p=text.replace(/(\*\*[^*\n]+\*\*|\*[^*\n]+\*)/g,(m)=>{
+        const i=mk.length,d=m.startsWith('**'),s=d?'**':'*';
+        mk.push({s,inner:d?m.slice(2,-2):m.slice(1,-1)});
+        return `MKPH${i}END`;
+    });
+    let main=await txText(p,tl);
+    for(let i=0;i<mk.length;i++){
+        const inner=await txText(mk[i].inner,tl);
+        main=main.replace(new RegExp(`MKPH${i}END`,'g'),`${mk[i].s}${inner}${mk[i].s}`);
+    }
+    return main;
+}
 
-    isTranslating = true;
-    const btn = document.getElementById('translateBtn');
-    btn.disabled = true;
-    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" style="animation:spin 1s linear infinite;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg> Translating...`;
+// Translate one MD file — line by line with real progress updates
+async function translateFile(file, tl, onProgress){
+    const lines=file.content.split('\n');
+    const output=[];
+    let inFence=false, fenceCh='';
+    let done=0;
 
-    document.getElementById('progressSection').style.display = 'block';
-    document.getElementById('resultSection').style.display   = 'none';
-    translatedFiles = new Array(uploadedFiles.length).fill(null);
+    // Count translatable lines for progress
+    let total=0;
+    let tmpFence=false;
+    for(const l of lines){
+        const fm=l.match(/^(`{3,}|~{3,})/);
+        if(fm){tmpFence=!tmpFence;continue;}
+        if(tmpFence||!l.trim()||/^[-*_]{3,}\s*$/.test(l.trim())||l.trim().startsWith('<!--'))continue;
+        total++;
+    }
 
-    const total  = uploadedFiles.length;
-    const listEl = document.getElementById('fileProgressList');
-    listEl.innerHTML = '';
+    for(let i=0;i<lines.length;i++){
+        const line=lines[i];
 
-    uploadedFiles.forEach((f, i) => {
-        listEl.innerHTML += `
+        // Fenced code block
+        const fm=line.match(/^(`{3,}|~{3,})/);
+        if(fm){
+            if(!inFence){inFence=true;fenceCh=fm[1];}
+            else if(line.startsWith(fenceCh)){inFence=false;fenceCh='';}
+            output.push(line); continue;
+        }
+        if(inFence){output.push(line);continue;}
+
+        // Empty / rule / comment — skip
+        if(!line.trim()){output.push('');continue;}
+        if(/^[-*_]{3,}\s*$/.test(line.trim())){output.push(line);continue;}
+        if(line.trim().startsWith('<!--')){output.push(line);continue;}
+
+        // Heading
+        const hm=line.match(/^(#{1,6})(\s+)(.+)/);
+        if(hm){
+            output.push(`${hm[1]}${hm[2]}${await txInline(hm[3],tl)}`);
+            done++; onProgress(done,total,line); await sleep(80); continue;
+        }
+
+        // Blockquote
+        if(/^>/.test(line)){
+            const bm=line.match(/^(>+\s*)(.*)/);
+            if(bm&&bm[2].trim()) output.push(`${bm[1]}${await txInline(bm[2],tl)}`);
+            else output.push(line);
+            done++; onProgress(done,total,line); await sleep(80); continue;
+        }
+
+        // List
+        const lm=line.match(/^(\s*[-*+]\s+|\s*\d+\.\s+)(.*)/);
+        if(lm){
+            output.push(`${lm[1]}${await txInline(lm[2],tl)}`);
+            done++; onProgress(done,total,line); await sleep(80); continue;
+        }
+
+        // Normal
+        output.push(await txInline(line,tl));
+        done++; onProgress(done,total,line); await sleep(80);
+    }
+
+    return output.join('\n');
+}
+
+// ═══════════════════════════════
+// MAIN TRANSLATION FLOW
+// ═══════════════════════════════
+async function startTranslation(){
+    if(!uploadedFiles.length||!selectedLang||isTranslating) return;
+    if(getRemaining()===0){showLimitPopup();return;}
+
+    isTranslating=true;
+    const btn=document.getElementById('translateBtn');
+    btn.disabled=true;
+    btn.innerHTML=`<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" style="animation:spin 1s linear infinite;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg> Translating...`;
+
+    document.getElementById('progressSection').style.display='block';
+    document.getElementById('resultSection').style.display='none';
+    translatedFiles=new Array(uploadedFiles.length).fill(null);
+
+    const total=uploadedFiles.length;
+    const listEl=document.getElementById('fileProgressList');
+    listEl.innerHTML='';
+
+    uploadedFiles.forEach((f,i)=>{
+        listEl.innerHTML+=`
         <div class="file-row" id="frow-${i}">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
                 <span style="font-size:11px;color:var(--muted);flex-shrink:0;min-width:20px;">${i+1}.</span>
@@ -848,117 +839,88 @@ async function startTranslation() {
             </div>
             <div style="display:flex;align-items:center;gap:8px;">
                 <div class="prog-track"><div id="fbar-${i}" class="prog-fill" style="width:0%"></div></div>
-                <span style="font-size:11px;color:var(--muted);flex-shrink:0;width:32px;text-align:right;" id="fpct-${i}">0%</span>
+                <span style="font-size:11px;color:var(--muted);flex-shrink:0;width:38px;text-align:right;" id="fpct-${i}">0%</span>
             </div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" id="fdetail-${i}"></div>
         </div>`;
     });
 
-    let completedCount = 0;
-    let activeCount    = 0;
+    let completedFiles=0;
 
-    function updateOverall() {
-        const pct = Math.round((completedCount / total) * 100);
-        document.getElementById('overallBar').style.width   = pct + '%';
-        document.getElementById('overallLabel').textContent = `Translating to ${selectedLang.name}...`;
-        document.getElementById('overallCount').textContent = `${completedCount} / ${total} done`;
-        document.getElementById('activeCount').textContent  = `${activeCount} active`;
-    }
-
-    async function translateOne(idx) {
-        const file    = uploadedFiles[idx];
-        const frow    = document.getElementById(`frow-${idx}`);
-        const fbar    = document.getElementById(`fbar-${idx}`);
-        const fstatus = document.getElementById(`fstatus-${idx}`);
-        const fpct    = document.getElementById(`fpct-${idx}`);
+    // Process files one by one (browser concurrency is fine but MyMemory rate limit needs care)
+    for(let i=0;i<uploadedFiles.length;i++){
+        const file=uploadedFiles[i];
+        const frow=document.getElementById(`frow-${i}`);
+        const fbar=document.getElementById(`fbar-${i}`);
+        const fstatus=document.getElementById(`fstatus-${i}`);
+        const fpct=document.getElementById(`fpct-${i}`);
+        const fdetail=document.getElementById(`fdetail-${i}`);
 
         frow.classList.add('active');
-        fstatus.textContent = '🔄 Translating';
-        fstatus.style.color = '#a09aff';
-        fbar.style.width    = '10%';
-        fpct.textContent    = '10%';
-        activeCount++;
-        updateOverall();
+        fstatus.textContent='🔄 Translating';
+        fstatus.style.color='#a09aff';
 
-        // Animated fake progress
-        let fakePct = 10;
-        const fakeTimer = setInterval(() => {
-            if (fakePct < 85) { fakePct += Math.random() * 3; fbar.style.width = Math.min(fakePct,85)+'%'; fpct.textContent = Math.round(Math.min(fakePct,85))+'%'; }
-        }, 900);
+        // Update overall
+        document.getElementById('overallLabel').textContent=`Translating to ${selectedLang.name}... (${i+1}/${total})`;
+        document.getElementById('overallCount').textContent=`${completedFiles} / ${total} done`;
+        document.getElementById('overallBar').style.width=Math.round((completedFiles/total)*100)+'%';
 
-        try {
-            const response = await fetch('/api/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content: file.content, filename: file.name, targetLang: selectedLang.code })
+        try{
+            const translated=await translateFile(file, selectedLang.code, (done, lineTotal, currentLine)=>{
+                const pct=Math.round((done/lineTotal)*100);
+                fbar.style.width=pct+'%';
+                fpct.textContent=pct+'%';
+                fdetail.textContent=`Line ${done}/${lineTotal}: ${currentLine.substring(0,40)}${currentLine.length>40?'...':''}`;
+                // Update overall detail too
+                document.getElementById('overallDetail').textContent=`${file.name} — ${pct}% (${done}/${lineTotal} lines)`;
             });
 
-            clearInterval(fakeTimer);
-            const data = await response.json();
-            if (!response.ok || !data.ok) throw new Error(data.error || `Server error ${response.status}`);
+            const outName=file.name.replace(/\.md$/i,'')+`_${selectedLang.code}.md`;
+            translatedFiles[i]={name:outName, content:translated};
 
-            translatedFiles[idx] = { name: data.filename, content: data.translated };
-            fbar.style.width = '100%'; fpct.textContent = '100%';
+            fbar.style.width='100%'; fpct.textContent='100%';
             fbar.classList.add('done');
-            fstatus.textContent = '✅ Done'; fstatus.style.color = '#43D9AD';
+            fstatus.textContent='✅ Done'; fstatus.style.color='#43D9AD';
+            fdetail.textContent='Translation complete';
             frow.classList.remove('active'); frow.classList.add('done');
 
-        } catch (err) {
-            clearInterval(fakeTimer);
-            translatedFiles[idx] = { name: file.name, content: file.content };
-            fbar.style.width = '100%'; fpct.textContent = 'err';
+        }catch(err){
+            translatedFiles[i]={name:file.name, content:file.content};
+            fbar.style.width='100%'; fpct.textContent='err';
             fbar.classList.add('error');
-            fstatus.textContent = '❌ Failed'; fstatus.style.color = '#FF6584';
+            fstatus.textContent='❌ Failed'; fstatus.style.color='#FF6584';
+            fdetail.textContent=err.message.substring(0,50);
             frow.classList.remove('active'); frow.classList.add('error');
         }
 
-        activeCount--; completedCount++;
-        updateOverall();
+        completedFiles++;
+        document.getElementById('overallCount').textContent=`${completedFiles} / ${total} done`;
+        document.getElementById('overallBar').style.width=Math.round((completedFiles/total)*100)+'%';
     }
 
-    // Parallel queue
-    const queue = uploadedFiles.map((_,i) => i);
-    const running = [];
-    async function runNext() {
-        if (!queue.length) return;
-        const idx = queue.shift();
-        const p   = translateOne(idx).then(() => { running.splice(running.indexOf(p),1); return runNext(); });
-        running.push(p);
-    }
-    const initialBatch = Math.min(CONCURRENCY, uploadedFiles.length);
-    for (let i = 0; i < initialBatch; i++) runNext();
-
-    await new Promise(resolve => {
-        const check = setInterval(() => { if (completedCount === total) { clearInterval(check); resolve(); } }, 300);
-    });
-
-    // Update usage counter
-    const successCount = translatedFiles.filter(f => f && f.name !== uploadedFiles[translatedFiles.indexOf(f)]?.name).length || completedCount;
-    addFilesToUsage(total);
+    // Update usage
+    addUsage(total);
     updateUsageUI();
 
-    document.getElementById('overallLabel').textContent = '🎉 All files translated!';
-    document.getElementById('overallBar').style.width   = '100%';
+    document.getElementById('overallLabel').textContent='🎉 All files translated!';
+    document.getElementById('overallBar').style.width='100%';
     document.getElementById('overallBar').classList.add('done');
-    document.getElementById('activeCount').textContent  = '0 active';
+    document.getElementById('overallDetail').textContent='';
 
     showResult();
+    if(getRemaining()===0) setTimeout(showLimitPopup,1500);
 
-    // Check if limit reached after this batch
-    if (getRemainingFiles() === 0) {
-        setTimeout(showLimitPopup, 1500);
-    }
-
-    btn.disabled = false;
-    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg> Translate Files`;
-    isTranslating = false;
+    btn.disabled=false;
+    btn.innerHTML=`<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg> Translate Files`;
+    isTranslating=false;
 }
 
-function showResult() {
-    const ok = translatedFiles.filter(f => f).length;
-    document.getElementById('resultTitle').textContent    = `Translation Complete! → ${selectedLang.name}`;
-    document.getElementById('resultSubtitle').textContent = `${ok} file${ok!==1?'s':''} translated — ready to download`;
-    document.getElementById('resultFileList').innerHTML   = translatedFiles.map((f, i) =>
-        f ? `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:9px;border:1px solid rgba(108,99,255,0.12);background:rgba(108,99,255,0.04);margin-bottom:6px;gap:8px;">
+function showResult(){
+    const ok=translatedFiles.filter(f=>f).length;
+    document.getElementById('resultTitle').textContent=`Translation Complete! → ${selectedLang.name}`;
+    document.getElementById('resultSubtitle').textContent=`${ok} file${ok!==1?'s':''} translated — ready to download`;
+    document.getElementById('resultFileList').innerHTML=translatedFiles.map((f,i)=>
+        f?`<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:9px;border:1px solid rgba(108,99,255,0.12);background:rgba(108,99,255,0.04);margin-bottom:6px;gap:8px;">
             <div style="display:flex;align-items:center;gap:8px;min-width:0;flex:1;">
                 <svg width="14" height="14" fill="none" stroke="#43D9AD" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escHtml(f.name)}</span>
@@ -966,39 +928,38 @@ function showResult() {
             <button class="btn-dl purple" onclick="downloadSingle(${i})">
                 <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>.md
             </button>
-        </div>` : ''
+        </div>`:''
     ).join('');
-    document.getElementById('resultSection').style.display = 'block';
-    document.getElementById('resultSection').scrollIntoView({ behavior:'smooth', block:'nearest' });
+    document.getElementById('resultSection').style.display='block';
+    document.getElementById('resultSection').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // DOWNLOAD
-// ═══════════════════════════════════════
-async function downloadZip() {
-    if (!translatedFiles.length) return;
-    const zip    = new JSZip();
-    const folder = zip.folder(`translated_${selectedLang.code}`);
-    translatedFiles.forEach(f => { if (f) folder.file(f.name, f.content); });
-    const blob = await zip.generateAsync({ type:'blob' });
-    triggerDownload(blob, `translated_${selectedLang.code}_${Date.now()}.zip`);
+// ═══════════════════════════════
+async function downloadZip(){
+    if(!translatedFiles.length) return;
+    const zip=new JSZip(), folder=zip.folder(`translated_${selectedLang.code}`);
+    translatedFiles.forEach(f=>{if(f)folder.file(f.name,f.content);});
+    const blob=await zip.generateAsync({type:'blob'});
+    triggerDownload(blob,`translated_${selectedLang.code}_${Date.now()}.zip`);
 }
-function downloadSingle(idx) {
-    const f = translatedFiles[idx]; if (!f) return;
-    triggerDownload(new Blob([f.content],{type:'text/markdown'}), f.name);
+function downloadSingle(idx){
+    const f=translatedFiles[idx]; if(!f) return;
+    triggerDownload(new Blob([f.content],{type:'text/markdown'}),f.name);
 }
-function triggerDownload(blob, name) {
-    const url = URL.createObjectURL(blob);
-    const a   = Object.assign(document.createElement('a'),{href:url,download:name});
-    document.body.appendChild(a); a.click();
+function triggerDownload(blob,name){
+    const url=URL.createObjectURL(blob);
+    const a=Object.assign(document.createElement('a'),{href:url,download:name});
+    document.body.appendChild(a);a.click();
     setTimeout(()=>{URL.revokeObjectURL(url);document.body.removeChild(a);},100);
 }
 
-// ═══════════════════════════════════════
+// ═══════════════════════════════
 // RESET
-// ═══════════════════════════════════════
-function resetAll() {
-    uploadedFiles=[]; selectedLang=null; translatedFiles=[]; isTranslating=false;
+// ═══════════════════════════════
+function resetAll(){
+    uploadedFiles=[];selectedLang=null;translatedFiles=[];isTranslating=false;
     document.getElementById('mdInput').value='';
     document.getElementById('fileChips').style.display='none';
     document.getElementById('chipsContainer').innerHTML='';
@@ -1009,9 +970,9 @@ function resetAll() {
     document.getElementById('fileProgressList').innerHTML='';
     document.getElementById('resultFileList').innerHTML='';
     document.querySelectorAll('.lang-btn,.modal-lang-btn').forEach(b=>b.classList.remove('selected'));
-    const btn = document.getElementById('translateBtn');
-    btn.disabled = true;
-    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg> Translate Files`;
+    const btn=document.getElementById('translateBtn');
+    btn.disabled=true;
+    btn.innerHTML=`<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg> Translate Files`;
 }
 
 function escHtml(t){const d=document.createElement('div');d.textContent=t||'';return d.innerHTML;}
